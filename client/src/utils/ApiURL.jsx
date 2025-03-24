@@ -1,1 +1,1 @@
-export const API_URL = import.meta.env.MODE === 'development' ? `${import.meta.env.VITE_SERVER_URL}` : '';
+export const API_URL = import.meta.env.MODE === 'development' ? `${import.meta.env.VITE_DEV_SERVER_URL}` : '';

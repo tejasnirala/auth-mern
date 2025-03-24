@@ -16,7 +16,7 @@ export const app = express();
 
 app.use(
   cors({
-    origin: process.env.VITE_SERVER_URL,
+    origin: process.env.CLIENT_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })
