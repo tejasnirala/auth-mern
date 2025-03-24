@@ -4,6 +4,7 @@ import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "../main";
+import { API_URL } from "../utils/ApiURL";
 
 const ResetPassword = () => {
   const {  isAuthenticated, setIsAuthenticated, setUser  } = useContext(Context);
@@ -13,7 +14,7 @@ const ResetPassword = () => {
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:3000/api/v1/user/password/reset/${token}`, { password, confirmPassword }, {
+    await axios.post(`${API_URL}/api/v1/user/password/reset/${token}`, { password, confirmPassword }, {
       withCredentials: true,
       headers: {
         "Content-Type": "application/json"

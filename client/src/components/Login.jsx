@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../main";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../utils/ApiURL";
 
 const Login = () => {
   const { setIsAuthenticated, setUser } = useContext(Context);
@@ -12,7 +13,7 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const handleLogin = async (data) => {
-    await axios.post("http://localhost:3000/api/v1/user/login", data, {
+    await axios.post(`${API_URL}/api/v1/user/login`, data, {
       withCredentials: true,
       headers: {
         "Content-Type": "application/json"
